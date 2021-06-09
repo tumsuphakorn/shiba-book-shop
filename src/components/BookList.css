@@ -1,0 +1,6 @@
+.BookList {
+  border: 1px solid black;
+  background-color: darkcyan;
+  display: flex;
+  flex: 4;
+}
