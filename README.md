@@ -1,11 +1,11 @@
 # Shiba Book Shop Project
 
-## Demo
-https://tumsuphakorn.github.io/shiba-book-shop/
-
 This project was initialized by Create React App.
 Made by React and some components from Material-UI.
 Deployed online by using "gh-pages" package.
+
+## Demo
+https://tumsuphakorn.github.io/shiba-book-shop/
 
 ## How to setup on local machine
 
