@@ -1,4 +1,5 @@
 .POS {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  max-height: 90vh;
 }

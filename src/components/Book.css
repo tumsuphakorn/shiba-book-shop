@@ -1,4 +1,35 @@
 .Book {
-  border: 1px solid black;
-  background-color: antiquewhite;
+  background-color: #faf1e6;
+  width: 180px;
+  border-radius: 5px;
+  margin: 30px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 4px #8c7b73;
+  transition: 100ms
+}
+
+.Book:hover {
+  cursor: pointer;
+  transform: scale(1.02);
+}
+
+.Book:active {
+  transform: scale(1.00);
+}
+
+.Book-img {
+  max-width: 120px;
+  margin: auto;
+}
+
+.Book-title {
+  margin: 0.5rem auto;
+}
+
+.Book-price {
+  color: black;
+  font-size: 1.5rem;
+  margin: 0;
 }

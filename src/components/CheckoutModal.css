@@ -1,0 +1,31 @@
+input[type=number] {
+  font-size: large;
+  border: none;
+  border-radius: 7px;
+  padding: 1rem;
+}
+
+.CheckoutModal-button {
+  display: flex;
+  justify-content: center;
+}
+
+.CheckoutModal-button button {
+  background-color: #614b3e;
+  color: white;
+  padding: 0.6rem 2rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  border-radius: 8px;
+  border: none;
+  box-shadow: 2px 3px 2px black;
+}
+
+.CheckoutModal-button button:hover {
+  cursor: pointer;
+  transform: scale(1.02);
+}
+
+.CheckoutModal-button button:active {
+  transform: scale(1.00);
+}

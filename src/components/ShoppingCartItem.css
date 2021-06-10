@@ -1,0 +1,24 @@
+.ShoppingCartItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #d2c1b5;
+  padding: 0.2rem 1rem;
+}
+
+.ShoppingCartItem-name {
+  font-size: 1.2rem;
+  font-weight: 400;
+  padding: 12px 0 0 12px;
+  margin: 0;
+}
+
+.ShoppingCartItem-status {
+  display: flex;
+  align-items: center;
+}
+
+.ShoppingCartItem-status p {
+  font-size: 1.4rem;
+  margin: 0 0.2rem;
+}

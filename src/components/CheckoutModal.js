@@ -1,20 +1,23 @@
-import { useState } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Modal from '@material-ui/core/Modal';
-import Backdrop from '@material-ui/core/Backdrop';
-import Fade from '@material-ui/core/Fade';
+import { useState } from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import Modal from "@material-ui/core/Modal";
+import Backdrop from "@material-ui/core/Backdrop";
+import Fade from "@material-ui/core/Fade";
+
+import "./CheckoutModal.css";
 
 const useStyles = makeStyles((theme) => ({
   modal: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
   },
   paper: {
-    backgroundColor: theme.palette.background.paper,
-    border: '2px solid #000',
+    backgroundColor: "#e4dacf",
+    border: "2px solid #000",
+    borderRadius: "5px",
     boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 4, 3),
+    padding: "2rem",
   },
 }));
 
@@ -36,21 +39,25 @@ function CheckoutModal({ netPrice, handleClose, openModal, reset }) {
       setIsSucceeded(false);
       setCash(0);
       reset();
-    }, 3000)
+    }, 3000);
   }
 
   let modalContent = (
     <div className={classes.paper}>
-      <h2>Net Price: {netPrice}</h2>
-      <p>Accept Cash</p>
+      <h1>Net Price: {netPrice.toLocaleString()}</h1>
+      <h3>Accept Cash:</h3>
       <input type="number" value={cash} onChange={handleInput} />
       {change >= 0 ? (
         <>
-          <h3>Change: {cash - netPrice}</h3>
-          <button type="button" onClick={handleConfirm}>Confirm order</button>
+          <h2>Change: {(cash - netPrice).toLocaleString()}</h2>
+          <div className="CheckoutModal-button">
+            <button onClick={handleConfirm}>
+              Confirm order
+            </button>
+          </div>
         </>
-      ):(
-        <h3>Not enough cash</h3>
+      ) : (
+        <h2 style={{ color: "red" }}>Not enough cash</h2>
       )}
     </div>
   );
@@ -58,7 +65,7 @@ function CheckoutModal({ netPrice, handleClose, openModal, reset }) {
   if (netPrice === 0) {
     modalContent = (
       <div className={classes.paper}>
-        <h2 id="transition-modal-title">Please select items before checkout</h2>
+        <h2>Please select items before checkout</h2>
       </div>
     );
   }
@@ -66,13 +73,13 @@ function CheckoutModal({ netPrice, handleClose, openModal, reset }) {
   if (isSucceeded) {
     modalContent = (
       <div className={classes.paper}>
-        <h2 id="transition-modal-title">Success! Thank you for shopping with us.</h2>
+        <h2>Success! Thank you for shopping with us.</h2>
       </div>
     );
   }
 
   return (
-    <div>
+    <div className="CheckoutModal">
       <Modal
         className={classes.modal}
         open={openModal}
@@ -83,9 +90,7 @@ function CheckoutModal({ netPrice, handleClose, openModal, reset }) {
           timeout: 500,
         }}
       >
-        <Fade in={openModal}>
-          {modalContent}
-        </Fade>
+        <Fade in={openModal}>{modalContent}</Fade>
       </Modal>
     </div>
   );
